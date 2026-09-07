@@ -4,7 +4,8 @@ Satellite-derived surface water area timeseries for **71,208 lakes and
 reservoirs** worldwide, 1985 to 2026, preserved from the Global Water Watch
 platform before it was decommissioned.
 
-> **DOI:** TODO — Zenodo DOI once minted
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22643338.svg)](https://doi.org/10.5281/zenodo.22643338)
+
 > **Licence:** [CC BY 4.0](LICENSE) — except the reservoir outlines in
 > `geometry_utf8`, which are OpenStreetMap-derived and remain under
 > [ODbL 1.0](#reservoir-outlines-are-odbl). See [Licence](#licence).
@@ -51,7 +52,7 @@ If you use this data, please cite **both** the method paper and this archive.
 
 **This archive:**
 
-> TODO — Zenodo citation once the DOI is minted
+> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22643338.svg)](https://doi.org/10.5281/zenodo.22643338)
 
 BibTeX for the paper:
 
