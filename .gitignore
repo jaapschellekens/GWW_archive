@@ -30,3 +30,7 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Output written by example_timeseries.ipynb when a reader runs it.
+reservoir_*.csv
+reservoir_*.png
