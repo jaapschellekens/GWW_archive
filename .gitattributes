@@ -1,0 +1,6 @@
+# Normalise line endings so the repo is not churned by Windows checkouts.
+* text=auto eol=lf
+
+# Notebooks and NetCDF are not meaningfully diffable as text.
+*.ipynb -diff
+*.nc binary
