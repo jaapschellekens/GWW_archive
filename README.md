@@ -21,6 +21,58 @@ API, taken in **September 2026** (TODO: confirm final date), so the record
 remains usable after the service is gone. It is a preservation copy: the data is
 reproduced as the API served it, with no reprocessing, filtering or gap-filling.
 
+# Provenance
+
+- **Source:** the Global Water Watch API, `https://api.globalwaterwatch.earth`
+- **Retrieved:** September 2026 (TODO: confirm final date)
+- **Method:** every reservoir listed by the API's `/reservoir` endpoint, with all
+  timeseries from `/reservoir/{id}/ts`, reproduced without modification. Values
+  and timestamps were verified against fresh API responses after writing.
+- **Underlying imagery:** Landsat and Sentinel-2, processed on Google Earth Engine
+  as described in the paper above.
+
+# Acknowledgements
+
+Global Water Watch was developed by **Deltares**, the **World Wide Fund for
+Nature (WWF)** and the **World Resources Institute (WRI)**, with support from
+Google.org, the Water, Peace and Security Partnership, and the European Space
+Agency.
+
+# Citation
+
+If you use this data, please cite **both** the method paper and this archive.
+
+**The method behind the timeseries:**
+
+> Donchyts, G., Winsemius, H., Baart, F., Dahm, R., Schellekens, J., Gorelick, N.,
+> Iceland, C., & Schmeier, S. (2022). High-resolution surface water dynamics in
+> Earth's small and medium-sized reservoirs. *Scientific Reports*, 12, 13776.
+> https://doi.org/10.1038/s41598-022-17074-6
+
+**This archive:**
+
+> TODO — Zenodo citation once the DOI is minted
+
+BibTeX for the paper:
+
+```bibtex
+@article{donchyts2022reservoirs,
+  title   = {High-resolution surface water dynamics in Earth's small and medium-sized reservoirs},
+  author  = {Donchyts, Gennadii and Winsemius, Hessel and Baart, Fedor and Dahm, Ruben
+             and Schellekens, Jaap and Gorelick, Noel and Iceland, Charles and Schmeier, Susanne},
+  journal = {Scientific Reports},
+  volume  = {12},
+  pages   = {13776},
+  year    = {2022},
+  doi     = {10.1038/s41598-022-17074-6}
+}
+```
+
+----
+----
+
+# The data
+
 ## What is in this archive
 
 | File | Description |
@@ -54,7 +106,6 @@ observations.
 
 ---
 
-# The data
 
 ## Dimensions
 
@@ -320,35 +371,7 @@ print(geom["type"])
 
 ---
 
-# Citation
 
-If you use this data, please cite **both** the method paper and this archive.
-
-**The method behind the timeseries:**
-
-> Donchyts, G., Winsemius, H., Baart, F., Dahm, R., Schellekens, J., Gorelick, N.,
-> Iceland, C., & Schmeier, S. (2022). High-resolution surface water dynamics in
-> Earth's small and medium-sized reservoirs. *Scientific Reports*, 12, 13776.
-> https://doi.org/10.1038/s41598-022-17074-6
-
-**This archive:**
-
-> TODO — Zenodo citation once the DOI is minted
-
-BibTeX for the paper:
-
-```bibtex
-@article{donchyts2022reservoirs,
-  title   = {High-resolution surface water dynamics in Earth's small and medium-sized reservoirs},
-  author  = {Donchyts, Gennadii and Winsemius, Hessel and Baart, Fedor and Dahm, Ruben
-             and Schellekens, Jaap and Gorelick, Noel and Iceland, Charles and Schmeier, Susanne},
-  journal = {Scientific Reports},
-  volume  = {12},
-  pages   = {13776},
-  year    = {2022},
-  doi     = {10.1038/s41598-022-17074-6}
-}
-```
 
 # Licence
 
@@ -396,19 +419,4 @@ plain CC BY.
 HydroLAKES is distributed by HydroSHEDS under its own terms; see
 <https://www.hydrosheds.org/products/hydrolakes>.
 
-# Provenance
 
-- **Source:** the Global Water Watch API, `https://api.globalwaterwatch.earth`
-- **Retrieved:** September 2026 (TODO: confirm final date)
-- **Method:** every reservoir listed by the API's `/reservoir` endpoint, with all
-  timeseries from `/reservoir/{id}/ts`, reproduced without modification. Values
-  and timestamps were verified against fresh API responses after writing.
-- **Underlying imagery:** Landsat and Sentinel-2, processed on Google Earth Engine
-  as described in the paper above.
-
-# Acknowledgements
-
-Global Water Watch was developed by **Deltares**, the **World Wide Fund for
-Nature (WWF)** and the **World Resources Institute (WRI)**, with support from
-Google.org, the Water, Peace and Security Partnership, and the European Space
-Agency.
