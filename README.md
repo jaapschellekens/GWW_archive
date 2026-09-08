@@ -340,12 +340,6 @@ print(geom["type"])
 
 ## What this dataset does and does not contain
 
-- **Surface water *area* only.** Despite reservoir volume being of obvious
-  interest, the GWW API served no volume or storage timeseries at the time of
-  archiving — its `/variables` endpoint listed only surface water area, and its
-  hypsometry endpoints returned empty for every reservoir tested. Converting
-  area to storage requires a separate area–volume relationship, which is not part
-  of this archive.
 - **Two variables:** `surface_water_area` (one value per satellite overpass,
   unfiltered) and `surface_water_area_monthly` (the monthly aggregate, filtered
   to remove spikes caused by cloud, shadow and partially imaged scenes).
@@ -366,9 +360,6 @@ print(geom["type"])
   The final month of a series may aggregate fewer observations than usual.
 - **Cloud, ice and shadow** affect water detection. Individual observations can
   be outliers; the monthly aggregate is more robust but not immune.
-- **Check `download_ok`.** A reservoir with `download_ok = 0` has no timeseries
-  here because the request was abandoned during archiving — not because the
-  reservoir had no data. Treat it as missing, not as empty.
 - **Outlines are static.** `geometry_utf8` is the reservoir extent as defined
   by its source dataset (OpenStreetMap, HydroLAKES), not a per-date water mask.
 - **Most reservoirs are unnamed**, and `grand_id` is present only for the small
@@ -415,11 +406,6 @@ source = np.array([str(s) for s in ds["source_name"].values])
 osm = source == "osm_way"            # ODbL applies to these outlines
 print(f"{osm.sum():,} of {len(osm):,} outlines are OpenStreetMap-derived")
 ```
-
-**The timeseries themselves are unaffected.** `surface_water_area`,
-`surface_water_area_monthly` and all the other variables are CC BY 4.0. Only the
-outline geometries carry ODbL, so if you drop `geometry_utf8` the remainder is
-plain CC BY.
 
 HydroLAKES is distributed by HydroSHEDS under its own terms; see
 <https://www.hydrosheds.org/products/hydrolakes>.
