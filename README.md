@@ -141,7 +141,7 @@ The third dimension is what makes this file look unusual; see
 
 | Variable | Units | Description |
 |---|---|---|
-| `surface_water_area_monthly` | m² | monthly mean surface water area; `NaN` where no observations exist |
+| `surface_water_area_monthly` | m² | monthly aggregate of the surface water area, **filtered** — spikes from cloud, shadow and partial scenes removed; `NaN` where no observations exist |
 
 A dense grid. Every reservoir shares the same `time` axis, so each is `NaN`
 outside its own period of record.
@@ -346,8 +346,12 @@ print(geom["type"])
   hypsometry endpoints returned empty for every reservoir tested. Converting
   area to storage requires a separate area–volume relationship, which is not part
   of this archive.
-- **Two variables:** `surface_water_area` (per overpass) and
-  `surface_water_area_monthly` (monthly mean of those observations).
+- **Two variables:** `surface_water_area` (one value per satellite overpass,
+  unfiltered) and `surface_water_area_monthly` (the monthly aggregate, filtered
+  to remove spikes caused by cloud, shadow and partially imaged scenes).
+  **For anything aggregated — regional means, trends, multi-reservoir work — use
+  the monthly series.** The raw per-overpass values are there for inspecting an
+  individual reservoir, and still contain the outliers the monthly series drops.
 - **No gap filling.** Months with no usable observation are `NaN`, not
   interpolated.
 
