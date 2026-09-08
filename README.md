@@ -6,6 +6,7 @@ platform before it was decommissioned.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22643338.svg)](https://doi.org/10.5281/zenodo.22643338)
 
+
 > **Licence:** [CC BY 4.0](LICENSE) — except the reservoir outlines in
 > `geometry_utf8`, which are OpenStreetMap-derived and remain under
 > [ODbL 1.0](#reservoir-outlines-are-odbl). See [Licence](#licence).
@@ -18,14 +19,14 @@ reservoirs, derived from Landsat and Sentinel-2 imagery. The platform is being
 shut down for resource reasons, and its API is going offline with it.
 
 This archive is a complete snapshot of the reservoir timeseries served by that
-API, taken in **September 2026** (TODO: confirm final date), so the record
+API, taken in **September 2026**, so the record
 remains usable after the service is gone. It is a preservation copy: the data is
 reproduced as the API served it, with no reprocessing, filtering or gap-filling.
 
 # Provenance
 
 - **Source:** the Global Water Watch API, `https://api.globalwaterwatch.earth`
-- **Retrieved:** September 2026 (TODO: confirm final date)
+- **Retrieved:** September 2026
 - **Method:** every reservoir listed by the API's `/reservoir` endpoint, with all
   timeseries from `/reservoir/{id}/ts`, reproduced without modification. Values
   and timestamps were verified against fresh API responses after writing.
@@ -78,9 +79,9 @@ BibTeX for the paper:
 
 | File | Description |
 |---|---|
-| `gww_reservoir_timeseries.nc` | the data — NetCDF4, CF-1.10 (TODO: confirm size) |
+| `gww_reservoir_timeseries.nc` (release artifact) | the data — NetCDF4, CF-1.10 |
 | `README.md` | this file |
-| `example_timeseries.ipynb` | worked example: open the file, extract and plot a reservoir |
+| `example_timeseries.ipynb` | example: open the file, extract and plot a reservoir, example area analysis |
 | `LICENSE` | CC BY 4.0 licence text |
 
 Nothing else is required to use the data. The NetCDF file is self-describing and
